@@ -19,3 +19,11 @@
 @endif --}}
 @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
+<body class="container">
+    
+    @include('components.navbar')
+    
+    @yield('content')
+    
+</body>
+</html>

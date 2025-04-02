@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-       @include('components.head')
-    </head>
-    <body class="container">
-        @include('components.navbar')
-        <p>this is a nav bar</p>
-        <a href="">Link 1</a>
+@extends('layouts.app')
+
+@section('content')
+    
+    
+        
+        
         <div class="container">
             <h1>Terminal Blog</h1>
         
@@ -16,5 +14,5 @@
                     <a href="#">{{ __('Read More') }}</a>
                 </div>
         </div>
-    </body>
-</html>
+   
+@endsection
