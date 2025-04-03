@@ -24,15 +24,22 @@
                     </a>
                 </div>
                <div class="col-md m-2"> 
-                    @auth
-                    <form action="{{ route('files.destroy', $file->id) }}" method="POST" class="inline-block ml-2">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="py-2 px-4 rounded">
-                            Delete
-                        </button>
-                    </form>
-                    @endauth
+                    <div class="row">
+                        @auth
+                        <div class="col">
+                            <a class="py-2 px-4 rounded" href="{{ route('files.edit', $file->id) }}" class=" py-2 px-4 rounded">Edit</a>
+                        </div>
+                        <div class="col">
+                            <form action="{{ route('files.destroy', $file->id) }}" method="POST" class="inline-block ml-2">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="py-2 px-4 rounded text-danger">
+                                    Delete
+                                </button>
+                            </form>
+                        </div>
+                        @endauth
+                    </div>
                 </div>
             </div>
             <hr>

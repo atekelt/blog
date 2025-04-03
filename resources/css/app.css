@@ -108,6 +108,17 @@ a:hover {
     font-family: 'Courier New', monospace;
     text-align: center;
 }
+.terminal-footer {
+    background-color: rgb(0, 0, 0);
+    color: #00ff00;
+    text-align: center;
+    padding: 10px;
+    font-family: monospace;
+    border-top: 2px solid #00ff00;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
 
 label {
     display: block;
