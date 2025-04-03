@@ -9,7 +9,7 @@ class FileController extends Controller
 {
     public function index()
     {
-        $files = File::all();
+        $files = File::paginate(10);
         return view('files.index', compact('files'));
     }
 
