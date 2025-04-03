@@ -11,6 +11,7 @@
                     @csrf
                 </form>
             </li>
+            <li><a href="{{ route('files.create') }}">Upload</a></li>
             <li><a href="{{ route('profile.edit') }}">Profile</a></li>
         @else
             <li><a href="{{ url('/login') }}">Login</a></li>

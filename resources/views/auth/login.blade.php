@@ -27,7 +27,7 @@
         <!-- Remember Me -->
         <div class="block mt-4">
             <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
+                <input class="input" id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
                 <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
             </label>
         </div>
@@ -68,12 +68,12 @@
     @enderror
         <!-- Email Address -->
         <label>Email:</label>
-        <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus autocomplete="username">
+        <input class="input" id="email" type="email" name="email" value="{{ old('email') }}" required autofocus autocomplete="username">
         
 
         <!-- Password -->
         <label>Password:</label>
-        <input id="password" type="password" name="password" required autocomplete="current-password">
+        <input class="input" id="password" type="password" name="password" required autocomplete="current-password">
         
 
         <button type="submit">Login</button>

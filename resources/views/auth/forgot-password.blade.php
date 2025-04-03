@@ -46,7 +46,7 @@
         
         <!-- Email Address -->
         <label>Email:</label>
-        <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus autocomplete="username">
+        <input class="input" id="email" type="email" name="email" value="{{ old('email') }}" required autofocus autocomplete="username">
         
         <button type="submit">Email Password Reset Link</button>
     </form>
