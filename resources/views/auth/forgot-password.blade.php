@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{-- <x-guest-layout>
     <div class="mb-4 text-sm text-gray-600">
         {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
     </div>
@@ -22,4 +22,33 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</x-guest-layout> --}}
+
+@extends('layouts.app')
+
+@section('content')
+<div class="terminal-login">
+    <h1 class="terminal-text">_Forgot Password$ <span class="cursor">_</span></h1>
+    
+    <p class="text-sm text-gray-600">Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.</p>
+    
+    <!-- Session Status -->
+    @if (session('status'))
+        <p class="status-message">{{ session('status') }}</p>
+    @endif
+
+    <form method="POST" action="{{ route('password.email') }}">
+        @csrf
+        
+        @error('email')
+            <p class="error text-danger">{{ $message }}</p>
+        @enderror
+        
+        <!-- Email Address -->
+        <label>Email:</label>
+        <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus autocomplete="username">
+        
+        <button type="submit">Email Password Reset Link</button>
+    </form>
+</div>
+@endsection
