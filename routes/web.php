@@ -11,7 +11,10 @@ Route::get('/', [FileController::class, 'index'])->name('files.index');
 // Route::get('/', function () {
 //     return view('files.index');
 // })->middleware(['auth', 'verified'])->name('files.index');
-
+Route::get('/files/{id}', [FileController::class, 'show'])->name('files.show');
+Route::get('/about', function () {
+    return view('about');
+});
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

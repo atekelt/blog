@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\File;
+use Illuminate\Support\Facades\Storage;
+use League\CommonMark\CommonMarkConverter;
 
 class FileController extends Controller
 {
@@ -77,4 +79,20 @@ class FileController extends Controller
         $file->delete();
         return redirect()->route('files.index')->with('success', 'File deleted successfully.');
     }
+    public function show($id)
+{
+    $file = File::findOrFail($id);
+    $filePath = public_path('uploads/' . $file->file_name);
+
+    if (!file_exists($filePath)) {
+        abort(404, 'File not found.');
+    }
+
+    $content = file_get_contents($filePath);
+
+    $converter = new CommonMarkConverter();
+    $htmlContent = $converter->convertToHtml($content);
+
+    return view('files.show', compact('file', 'htmlContent'));
+}
 }

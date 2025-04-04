@@ -1,5 +1,5 @@
 <nav class="navbar">
-    <div class="brand">_TerminalBlog$</div>
+    <div class="brand"><a href="/"> _TerminalBlog$</a></div>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <ul class="nav-links">
         <li><a href="{{ url('/') }}">Home</a></li>
